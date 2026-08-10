@@ -1,9 +1,12 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = "postgresql+psycopg://aaryancr@localhost/taskflow"
+
+DATABASE_URL = "postgresql+psycopg://taskflow:taskflow123@postgres:5432/taskflow"
+
 
 engine = create_engine(DATABASE_URL)
+
 
 SessionLocal = sessionmaker(
     autocommit=False,

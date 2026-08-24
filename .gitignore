@@ -8,6 +8,13 @@ node_modules/
 
 # Environment variables
 .env
+.env.*
+!.env.example
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
 
 # macOS
 .DS_Store

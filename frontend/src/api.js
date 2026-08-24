@@ -20,6 +20,16 @@ function getErrorMessage(data, status) {
     return data.detail;
   }
 
+  if (data && Array.isArray(data.detail)) {
+    const messages = data.detail
+      .map((error) => (error && typeof error.msg === "string" ? error.msg.trim() : ""))
+      .filter(Boolean);
+
+    if (messages.length > 0) {
+      return messages.join(" ");
+    }
+  }
+
   return `Request failed (${status})`;
 }
 
